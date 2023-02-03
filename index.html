@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="O_score" class="score">
+      <div id="Opnts"></div>
+      <select name="playerO_dropdown" id="playerO_dropdown">
+        <option value="player">player</option>
+        <option value="bot">Bot</option>
+      </select>
+      <img id="OprofileImage" src = "./gamepad.svg">
+    </div>
+    <div id="gameBoard">
+        <div class="card">
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+            <div class="face left"></div>
+            <div class="face right"></div>
+            <div class="face front"></div>
+            <div class="face back" id="0" onclick="place(this)"></div>
+          </div>
+          <div class="card">
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+            <div class="face left"></div>
+            <div class="face right"></div>
+            <div class="face front"></div>
+            <div class="face back" id="1"onclick="place(this)"></div>
+          </div>
+          <div class="card">
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+            <div class="face left"></div>
+            <div class="face right"></div>
+            <div class="face front"></div>
+            <div class="face back"id="2"onclick="place(this)"></div>
+          </div>
+          <div class="card">
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+            <div class="face left"></div>
+            <div class="face right"></div>
+            <div class="face front"></div>
+            <div class="face back"id="3" onclick="place(this)"></div>
+          </div>
+          <div class="card">
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+            <div class="face left"></div>
+            <div class="face right"></div>
+            <div class="face front"></div>
+            <div class="face back" id="4"onclick="place(this)"></div>
+          </div>
+          <div class="card">
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+            <div class="face left"></div>
+            <div class="face right"></div>
+            <div class="face front"></div>
+            <div class="face back" id="5"onclick="place(this)"></div>
+          </div>
+          <div class="card">
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+            <div class="face left"></div>
+            <div class="face right"></div>
+            <div class="face front"></div>
+            <div class="face back" id="6"onclick="place(this)"></div>
+          </div>
+          <div class="card">
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+            <div class="face left"></div>
+            <div class="face right"></div>
+            <div class="face front"></div>
+            <div class="face back" id="7"onclick="place(this)"></div>
+          </div>
+          <div class="card">
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+            <div class="face left"></div>
+            <div class="face right"></div>
+            <div class="face front"></div>
+            <div class="face back" id="8"onclick="place(this)"></div>
+          </div>
+    </div>
+    <div id="X_score" class="score">
+      <img id="XprofileImage" src = "./gamepad.svg">
+      <select name="playerX_dropdown" id="playerX_dropdown">
+        <option value="player">player</option>
+        <option value="bot">Bot</option>
+      </select>
+      <div id="Xpnts"></div>
+    </div>
+</body>
+</html>

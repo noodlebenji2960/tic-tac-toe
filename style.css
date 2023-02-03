@@ -1,0 +1,170 @@
+@font-face {
+    font-family: PressStart2P;
+    src: url(PressStart2P.ttf);
+}
+
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+}
+
+.card{
+    user-select: none;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#gameBoard {
+    height: min-content;
+    width: min-content;
+    display: grid;
+    grid-template-rows: repeat(3, 100px);
+    grid-template-columns: repeat(3, 100px);
+    position: absolute;
+}
+
+@keyframes turn {
+    0%{
+      transform: rotate3d(0, 0, 0, 0);
+    }
+    50%{
+      scale: 110%;
+    }
+    100% {
+      transform: rotate3d(1, 1, 0, 180deg);
+    }
+  }
+
+  @keyframes turn2 {
+    0% {
+      transform: rotate3d(1, 1, 0, 180deg);
+    }
+    50%{
+      scale: 110%;
+    }
+    85%{
+    }
+    100% {
+      transform: rotate3d(0, 0, 0, 720deg);
+    }
+  }
+
+  @keyframes turn3 {
+    0% {
+      transform: rotate3d(1, 1, 0, 180deg);
+    }
+    100% {
+      transform: rotate3d(0, 0, 0, 720deg);
+    }
+  }
+
+  .score{
+    display: flex;
+    height: 200px;
+    width: 350px;
+    font-weight: bold;
+    font-size: 2rem;
+    color: darkgray;
+    font-family: PressStart2P;
+    display: flex;
+    border: 2px dashed rgba(211, 211, 211, 0.5);
+    user-select: none;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .score select{
+    overflow: hidden;
+    height: 50px;
+    width: 16px;
+    font-family: PressStart2P;
+    font-size: 10px;
+    border: none;
+    background: none;
+  }
+
+  .score select option{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 12px;
+    background: none;
+    border: none;
+  }
+
+  .score img{
+    height: 30px;
+    width: 30px;
+    margin: 5px;
+  }
+
+  #Opnts{
+    width: 100%;
+    text-align: left;
+  }
+
+  #Xpnts{
+    width: 100%;
+    text-align: right;
+  }
+
+  #O_score{
+    justify-content: right;
+  }
+  #X_score{
+    align-items: flex-end;
+  }
+  
+  .cube {
+    transform-style: preserve-3d;
+    animation: turn 0.5s ease-in-out;
+    z-index: 2;
+  }
+
+  .cube2 {
+    transform-style: preserve-3d;
+    animation: turn2 0.5s ease-in-out;
+    z-index: 2;
+  }
+
+  .cube3 {
+    transform-style: preserve-3d;
+    animation: turn3 0.5s ease-in-out;
+    z-index: 2;
+  }
+
+  .face {
+    width: 98px;
+    height: 98px;
+    background: rgba(255, 255, 255);
+    border: 2px solid rgb(135, 135, 135);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .front {
+    transform: translateZ(50px);
+  }
+  .back {
+    transform: translateZ(-50px);
+  }
+
+  .left {
+    transform: translateX(-50px) rotateY(-90deg);
+  }
+  .right {
+    transform: translateX(50px) rotateY(90deg);
+  }
+  .top {
+    transform: translateY(-50px) rotateX(90deg);
+  }
+  .bottom {
+    transform: translateY(50px) rotateX(-90deg);
+  }
