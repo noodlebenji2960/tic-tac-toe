@@ -93,21 +93,15 @@ function findIndexEmptySquares(){
 function draw(){
     for (let i = 0; i < 9; i++){
         let cell = document.getElementById(i)
-        cell.addEventListener("mouseenter", function(object){
+        cell.addEventListener("mouseover", function(object){
             if(hover == "active"){
                 if(cell.innerHTML==""){
                     cell.style.backgroundImage = "url(./" + turnOrder + ".svg)"
-                    cell.style.opacity = "0.5"
                 }
             }
         })
-        cell.addEventListener("touchend", function(object){
-            cell.style.background = "white"
-            cell.style.opacity = "1"
-        })
         cell.addEventListener("mouseleave", function(object){
             cell.style.background = "white"
-            cell.style.opacity = "1"
         })
     }
     if((document.getElementById("playerO_dropdown").value=="player")&&(document.getElementById("playerX_dropdown").value=="player")){
