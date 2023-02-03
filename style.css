@@ -12,6 +12,7 @@ body{
     flex-direction: column;
     height: 100vh;
     width: 100vw;
+    padding: 0px;
     margin: 0px;
 }
 
@@ -67,8 +68,8 @@ body{
 
   .score{
     display: flex;
-    height: 200px;
-    width: 350px;
+    height: 100vh;
+    width: 100vw;
     font-weight: bold;
     font-size: 2rem;
     color: darkgray;
@@ -104,12 +105,12 @@ body{
   }
 
   #Opnts{
-    width: 100%;
+    width: 90%;
     text-align: left;
   }
 
   #Xpnts{
-    width: 100%;
+    width: 90%;
     text-align: right;
   }
 

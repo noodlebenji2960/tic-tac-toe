@@ -97,11 +97,13 @@ function draw(){
             if(hover == "active"){
                 if(cell.innerHTML==""){
                     cell.style.backgroundImage = "url(./" + turnOrder + ".svg)"
+                    cell.style.opacity = "0.5"
                 }
             }
         })
         cell.addEventListener("mouseleave", function(object){
             cell.style.background = "white"
+            cell.style.opacity = "1"
         })
     }
     if((document.getElementById("playerO_dropdown").value=="player")&&(document.getElementById("playerX_dropdown").value=="player")){
