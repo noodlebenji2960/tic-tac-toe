@@ -101,6 +101,10 @@ function draw(){
                 }
             }
         })
+        cell.addEventListener("touchend", function(object){
+            cell.style.background = "white"
+            cell.style.opacity = "1"
+        })
         cell.addEventListener("mouseleave", function(object){
             cell.style.background = "white"
             cell.style.opacity = "1"
