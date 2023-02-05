@@ -1,5 +1,7 @@
 let turnOrder = randomizeTurnOrder()
 let hover = "inactive"
+XBot = "inactive"
+OBot = "inactive"
 
 const P1 = 'X';
 const P2 = 'O';
@@ -106,9 +108,9 @@ function draw(){
             cell.style.opacity = "1"
         })
     }
-    if((document.getElementById("playerO_dropdown").value=="player")&&(document.getElementById("playerX_dropdown").value=="player")){
+    if((OBot == "inactive")&&(XBot == "inactive")){
         hover="active"
-    } else if((document.getElementById("playerO_dropdown").value=="bot")&&(document.getElementById("playerX_dropdown").value=="bot")){
+    } else if((OBot == "active")&&(XBot == "active")){
         hover="inactive"
     }
 }
@@ -117,32 +119,65 @@ document.getElementById("playerX_dropdown").addEventListener("change", changeDro
 document.getElementById("playerO_dropdown").addEventListener("change", changeDropdown)
 
 function changeDropdown(){
-    if(document.getElementById("playerO_dropdown").value=="bot"){
+    if(document.getElementById("playerO_dropdown").value=="Space-invaders"){
         document.getElementById("OprofileImage").src = "./space-invaders.svg"
         clearPoints()
-    }else{
+        OBot = "active"
+    } else if(document.getElementById("playerO_dropdown").value=="Mr Clippy"){
+        document.getElementById("OprofileImage").src = "./paperclip.svg"
+        clearPoints()
+        OBot = "active"
+    } else if(document.getElementById("playerO_dropdown").value=="HAL"){
+        document.getElementById("OprofileImage").src = "./HAL.svg"
+        clearPoints()
+        OBot = "active"
+    } else if(document.getElementById("playerO_dropdown").value=="Skynet"){
+        document.getElementById("OprofileImage").src = "./skynet.svg"
+        clearPoints()
+        OBot = "active"
+    } else if(document.getElementById("playerO_dropdown").value=="GPT-9"){
+        document.getElementById("OprofileImage").src = "./GPT.svg"
+        clearPoints()
+        OBot = "active"
+    } else {
+
     }
-    if(document.getElementById("playerX_dropdown").value=="bot"){
+
+    if(document.getElementById("playerX_dropdown").value=="Space-invaders"){
         document.getElementById("XprofileImage").src = "./space-invaders.svg"
         clearPoints()
-    }else{
+        XBot = "active"
+    } else if(document.getElementById("playerX_dropdown").value=="R2D2"){
+        document.getElementById("XprofileImage").src = "./R2D2.svg"
+        clearPoints()
+    } else if(document.getElementById("playerX_dropdown").value=="Jarvis"){
+        document.getElementById("XprofileImage").src = "./jarvis.svg"
+        clearPoints()
+        XBot = "active"
+    } else if(document.getElementById("playerX_dropdown").value=="Agent Smith"){
+        document.getElementById("XprofileImage").src = "./agent-smith.svg"
+        clearPoints()
+        XBot = "active"
     }
+
     if(document.getElementById("playerO_dropdown").value=="player"){
         document.getElementById("OprofileImage").src = "./gamepad.svg"
         clearPoints()
+        OBot = "inactive"
     }
     else{
     }
     if(document.getElementById("playerX_dropdown").value=="player"){
         document.getElementById("XprofileImage").src = "./gamepad.svg"
         clearPoints()
+        XBot = "inactive"
     }
     else{
     }
     
-    if((turnOrder==P2)&&(document.getElementById("playerO_dropdown").value=="bot")){
+    if((turnOrder==P2)&&(OBot == "active")){
         setTimeout(botPlay(), 1000)
-    } else if((turnOrder==P1)&&(document.getElementById("playerX_dropdown").value=="bot")){
+    } else if((turnOrder==P1)&&(XBot == "active")){
         setTimeout(botPlay(), 1000)
     } else {
     }
@@ -161,53 +196,53 @@ function changeTurn(){
     }
 
     //
-    if((turnOrder==P2)&&(document.getElementById("playerO_dropdown").value=="bot")){
+    if((turnOrder==P2)&&(OBot == "active")){
         botPlay()
         if(checkWinner()==true){animateClearBoard2()}
     }
-    if((turnOrder==P1)&&(document.getElementById("playerX_dropdown").value=="bot")){
+    if((turnOrder==P1)&&(XBot == "active")){
         botPlay()
         if(checkWinner()==true){animateClearBoard2()}
     }
 }
 
 function hoverActivate(){
-    if((document.getElementById("playerX_dropdown").value=="bot")&&(document.getElementById("playerO_dropdown").value=="bot")){
+    if((XBot == "active")&&(OBot == "active")){
     hover = "inactive"
     } else {
     hover = "active"
     }
 
-    if((turnOrder==P2)&&(document.getElementById("playerO_dropdown").value=="bot")){
+    if((turnOrder==P2)&&(OBot == "active")){
         hover = "inactive"
     }
-    if((turnOrder==P1)&&(document.getElementById("playerX_dropdown").value=="bot")){
+    if((turnOrder==P1)&&(XBot == "active")){
         hover = "inactive"
     }
 } 
 
 function botPlay(){
     let cell = document.getElementById(bestSpot())
-    if((cell == undefined)&&(document.getElementById("playerX_dropdown").value == "bot")&&(turnOrder==P1)){
+    if((cell == undefined)&&(XBot == "active")&&(turnOrder==P1)){
         animateClearBoard2()
         setTimeout(function(){
             cell = document.getElementById(bestSpot())
             place(cell)
             hoverActivate()
         }, 3200)
-    } else if((cell == undefined)&&(document.getElementById("playerO_dropdown").value == "bot")&&(turnOrder==P2)){
+    } else if((cell == undefined)&&(OBot == "active")&&(turnOrder==P2)){
         animateClearBoard2()
         setTimeout(function(){
             cell = document.getElementById(bestSpot())
             place(cell)
             hoverActivate()
         }, 3200)
-    } else if((document.getElementById("playerO_dropdown").value == "bot")&&(turnOrder==P2)){
+    } else if((OBot == "active")&&(turnOrder==P2)){
         setTimeout(function(){
             place(cell)
             hoverActivate()
         }, 1000)
-    } else if((document.getElementById("playerX_dropdown").value == "bot")&&(turnOrder==P1)){
+    } else if((XBot == "active")&&(turnOrder==P1)){
         setTimeout(function(){
             place(cell)
             hoverActivate()
