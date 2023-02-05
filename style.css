@@ -12,7 +12,6 @@ body{
     flex-direction: column;
     height: 100vh;
     width: 100vw;
-    padding: 0px;
     margin: 0px;
     overflow: hidden;
 }
@@ -78,9 +77,16 @@ body{
     display: flex;
     user-select: none;
     padding-right: 20px;
-    padding-left: 20px;
-  
+    padding-left: 20px;  
   }
+
+  @media only screen and (max-width: 600px) {
+    .score{
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+  }
+
 
   .score select{
     overflow: hidden;
