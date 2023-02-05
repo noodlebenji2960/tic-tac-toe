@@ -14,7 +14,7 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 100vh;
+    height: 95vh;
     margin: 0px;
     padding: 0px;
 }
@@ -117,7 +117,6 @@ body{
 
   #O_score{
     justify-content: right;
-    border: 2px dashed rgba(211, 211, 211, 0.5);
   }
   #X_score{
     align-items: flex-end;
