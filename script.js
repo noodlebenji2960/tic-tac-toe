@@ -1,7 +1,8 @@
 let turnOrder = randomizeTurnOrder()
 let hover = "inactive"
-XBot = "inactive"
-OBot = "inactive"
+
+let XBot = "inactive"
+let OBot = "inactive"
 
 const P1 = 'X';
 const P2 = 'O';
@@ -93,20 +94,24 @@ function findIndexEmptySquares(){
 }
 
 function draw(){
-    for (let i = 0; i < 9; i++){
-        let cell = document.getElementById(i)
-        cell.addEventListener("mouseover", function(object){
-            if(hover == "active"){
-                if(cell.innerHTML==""){
-                    cell.style.backgroundImage = "url(./" + turnOrder + ".svg)"
-                    cell.style.opacity = "0.5"
+    //if touch screen do not make hover event listeners
+    if ("ontouchstart" in document.documentElement){
+    } else {
+        for (let i = 0; i < 9; i++){
+            let cell = document.getElementById(i)
+            cell.addEventListener("mouseover", function(object){
+                if(hover == "active"){
+                    if(cell.innerHTML==""){
+                        cell.style.backgroundImage = "url(./" + turnOrder + ".svg)"
+                        cell.style.opacity = "0.5"
+                    }
                 }
-            }
-        })
-        cell.addEventListener("mouseleave", function(object){
-            cell.style.background = "white"
-            cell.style.opacity = "1"
-        })
+            })
+            cell.addEventListener("mouseleave", function(object){
+                cell.style.background = "white"
+                cell.style.opacity = "1"
+            })
+        }
     }
     if((OBot == "inactive")&&(XBot == "inactive")){
         hover="active"
