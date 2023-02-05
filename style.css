@@ -14,9 +14,15 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 95vh;
+    height: 100vh;
     margin: 0px;
     padding: 0px;
+}
+
+@media (hover: hover) {
+    body{
+      height: 90vh;
+    }
 }
 
 .card{
